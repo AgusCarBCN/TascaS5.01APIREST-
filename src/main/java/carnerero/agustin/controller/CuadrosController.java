@@ -30,7 +30,7 @@ public class CuadrosController {
 	private CuadroRepository cuadroRepo;
 
 //Lista cuadros de tienda
-	@GetMapping("/GET/shops/{ID}/pictures")
+	@GetMapping("/shops/{ID}/pictures")
 	public ResponseEntity<List<Cuadro>> listarCuadrosPorTiendaId(@PathVariable(value = "ID") Long idtienda) {
 		if (!tiendaRepo.existsById(idtienda)) {
 			throw new TiendaNotFoundException(idtienda);
@@ -42,7 +42,7 @@ public class CuadrosController {
 	}
 
 //Añadir cuadros a tienda
-	@PostMapping("/POST/shops/{ID}/pictures")
+	@PostMapping("/shops/{ID}/pictures")
 	public ResponseEntity<Cuadro> añadirCuadro(@PathVariable(value = "ID") Long idtienda,
 			@RequestBody Cuadro cuadrorequest) {		
 		Cuadro cuadro = tiendaRepo.findById(idtienda).map(tienda -> {
@@ -55,7 +55,7 @@ public class CuadrosController {
 
 	}
 //Borrar todos los cuadros de una tienda
-	@DeleteMapping("/DELETE/shops/{ID}/pictures")
+	@DeleteMapping("/shops/{ID}/pictures")
 	public ResponseEntity<List<Cuadro>>borrarTodosLosCuadros(@PathVariable(value="ID") Long idtienda){
 		if(!tiendaRepo.existsById(idtienda)) {
 			throw new TiendaNotFoundException(idtienda);
