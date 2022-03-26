@@ -21,7 +21,7 @@ public class TiendaController {
 	private TiendaRepository tiendaRepo;
 
 	// Crear tienda
-	@PostMapping("/POST/shops")
+	@PostMapping("/shops")
 	public ResponseEntity<Tienda> crearTienda(@RequestBody Tienda tienda) {
 		try {
 			return new ResponseEntity<>(tiendaRepo.save(tienda), HttpStatus.CREATED);
@@ -32,7 +32,7 @@ public class TiendaController {
 	
 	// Listar tiendas: Lista tiendas con su nombre y capacidad
 
-	@GetMapping("/GET/shops")
+	@GetMapping("/shops")
 	public ResponseEntity<List<Tienda>> listarTiendas() {
 		try {
 			List<Tienda> listaDeTiendas = tiendaRepo.findAll();
