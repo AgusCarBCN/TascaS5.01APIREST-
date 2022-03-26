@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "75e226a9-5493-447a-aa80-42f4fd1d8af6",
+		"_postman_id": "188ef380-38a3-481f-a55c-3a23e30a77d1",
 		"name": "TascaS5.01",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\":\"Tienda1\",\r\n    \"capacidadMaxima\":35\r\n\r\n}",
+					"raw": "{\r\n    \"nombre\":\"Tienda2\",\r\n    \"capacidadmaxima\":3\r\n   \r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,15 +20,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/POST/shops/",
+					"raw": "localhost:8090/shops",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8090",
 					"path": [
-						"POST",
-						"shops",
-						""
+						"shops"
 					]
 				}
 			},
@@ -36,19 +34,29 @@
 		},
 		{
 			"name": "Lista Tiendas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Cuadro1\",\n    \"fechaentrada\":\"05-12-2010\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/GET/shops/",
+					"raw": "localhost:8090/shops",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8090",
 					"path": [
-						"GET",
-						"shops",
-						""
+						"shops"
 					]
 				}
 			},
@@ -61,7 +69,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"nombre\":\"Cuadro1\",\r\n\"precio\":300.0,\r\n\"fechaentrada\":\"02/02/2022\",\r\n\"autor\":\"Yo mismo\"}",
+					"raw": "{\"nombre\":\"Cuadroasaasd\",\r\n\"precio\":4500.0,\r\n\"fechaentrada\":\"22/02/2022\",\r\n\"autor\":\"Otro\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -69,15 +77,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/POST/shops/1/pictures",
+					"raw": "localhost:8090/shops/4/pictures",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8090",
 					"path": [
-						"POST",
 						"shops",
-						"1",
+						"4",
 						"pictures"
 					]
 				}
@@ -90,15 +97,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/GET/shops/2/pictures",
+					"raw": "localhost:8090/shops/4/pictures",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8090",
 					"path": [
-						"GET",
 						"shops",
-						"2",
+						"4",
 						"pictures"
 					]
 				}
@@ -111,16 +117,22 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/DELETE/shops/1/pictures",
+					"raw": "localhost:8090/shops/4/pictures",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8090",
 					"path": [
-						"DELETE",
 						"shops",
-						"1",
+						"4",
 						"pictures"
+					],
+					"query": [
+						{
+							"key": "{\"nombre\":\"Tienda1\",",
+							"value": null,
+							"disabled": true
+						}
 					]
 				}
 			},
