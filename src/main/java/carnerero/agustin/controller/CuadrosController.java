@@ -39,6 +39,8 @@ public class CuadrosController {
 
 		return new ResponseEntity<>(cuadros, HttpStatus.OK);
 
+		
+		
 	}
 
 //Añadir cuadros a tienda
